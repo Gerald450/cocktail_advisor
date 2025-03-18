@@ -5,6 +5,8 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 const API_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+var ingredients = [];
+var measures = [];
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,7 +34,25 @@ app.post('/mixture', async (req, res) => {
     try{
         const response = await axios.get(API_url + drink);
         const result = response.data;
-        res.render('instructions.ejs', {instructions: result.drinks[0].strInstructions, mix: drink})
+        for(let i = 1; i<16; i++){
+            let ingredient = 'strIngredient' + i;
+            let need = result.drinks[0][ingredient];
+            if (need!=null){
+                ingredients.push(need)
+            }
+        }
+
+        for(let i = 1; i<16; i++){
+            let measure = 'strMeasure' + i;
+            let need = result.drinks[0][measure];
+            if (need!=null){
+                measures.push(need)
+            }
+        }
+        res.render('instructions.ejs', {instructions: result.drinks[0].strInstructions, mix: drink, listI: ingredients, listM: measures})
+
+        ingredients= [];
+        measures=[];
 
     }catch(error){
         res.render('instructions.ejs', {error: error.message});

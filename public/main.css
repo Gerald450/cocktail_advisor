@@ -120,10 +120,18 @@ img{
 .bottom{
     background-color: aliceblue;
     display: flex;
+    overflow-y: scroll;
 }
 
 .instr-text{
     font-size: 2.2vw;
     padding: 10px 10px;
+}
+
+.inner-center{
+    background-color:#ffb6c1 ;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 

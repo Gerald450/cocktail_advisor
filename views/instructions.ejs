@@ -15,8 +15,28 @@
 <body>
     <%# instructions %>
 <div class="center">
+
+<div class="inner-center">
+       <%#ingridients%>
+
+       <div class="icontainer ingredients">
+
+        <div class="top">
+            <h1 class="mixtures-text dancing-script">Ingredients for <%=mix%></h1>
+          </div>
+
+          <div class="bottom">
+            <ul>
+                <%for(let i = 0; i < listI.length; i++){ %>
+                <li class="ing-text dancing-script"><%=listM[i]%>, <%=listI[i]%></li>
+                <% } %>
+            </ul>
+          </div>
+       </div>
+
+
     <div class="icontainer">
-        <%# sidebar list %> 
+
         <% if(locals.instructions){ %>
         <div class="top">
           <h1 class="mixtures-text dancing-script">Instructions for <%=mix%></h1>
@@ -28,6 +48,11 @@
           <% } %>
         </div>
       </div>
+</div>
+
+   
+
+
     </div>
       <script src="/main.js" charset="utf-8"></script>
 </body>
