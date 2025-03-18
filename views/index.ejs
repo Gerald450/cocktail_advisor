@@ -15,61 +15,6 @@
   <body>
     <div class="center">
 
-
-      <%# modal form %>
-
-      <div class="pop-up">
-        <%# sidebar list %> 
-        <% if(locals.drink){ %>
-        <div class="left-sidebar">
-          <h1 class="mixtures-text dancing-script">Mixtures of <%=drink%></h1>
-          <p class="dancing-script select">Select any mixture of your liking</p>
-        </div>
-
-        <div class="right-sidebar">
-          <%# cocktail list %> 
-          <% choices.forEach((choice) => { %>
-          <div class="cocktails">
-            <img src="<%=choice.strDrinkThumb%>" />
-            <form action="/mixture" method="post" class="input-form">
-              <input
-                type="hidden"
-                name="drink"
-                value="<%=choice.strDrink %>"
-                class="hidden-input"
-              />
-              
-              <input
-                type="submit"
-                value="<%=choice.strDrink %>"
-                class="btn btn-submit2 dancing-script"
-              />
-            </form>
-            <button class="btn btn-submit-2 dancing-script">Go</button>
-          </div>
-          <% })} %>
-        </div>
-      </div>
-
-
-      <%# instructions %>
-
-      <div class="pop-up2">
-        <%# sidebar list %> 
-        <% if(locals.instructions){ %>
-        <div class="left-sidebar">
-          <h1 class="mixtures-text dancing-script">instructions for <%=mix%></h1>
-        </div>
-
-        <div class="right-sidebar">
-          <p><%=instructions%></p>
-          </div>
-          <% } %>
-        </div>
-      </div>
-
-
-
       <div id="container" class="container">
         <%# sidebar list %>
         <div class="left-sidebar">
@@ -92,14 +37,7 @@
                 class="hidden-input"
               />
               <button class="btn-submit dancing-script">Margarita</button>
-              
-              <!-- <input
-                type="submit"
-                value="Margarita"
-                class="btn-submit dancing-script"
-              /> -->
             </form>
-            <button class="btn-submit dancing-script">Go</button>
           </div>
           <div class="cocktails">
             <img
@@ -113,14 +51,7 @@
                 class="hidden-input"
               />
               <button class="btn-submit dancing-script">Negroni</button>
-              
-              <!-- <input
-                type="submit"
-                value="Margarita"
-                class="btn-submit dancing-script"
-              /> -->
             </form>
-            <button class="btn-submit dancing-script">Go</button>
           </div>
           <div class="cocktails"></div>
           <div class="cocktails"></div>

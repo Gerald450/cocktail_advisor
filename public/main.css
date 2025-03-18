@@ -23,28 +23,7 @@ body{
     filter: drop-shadow(0 0 100px crimson);
 }
 
-.container2{
-    position: static;
-    width: 70vw;
-    height: 40vw;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    border: 10px solid #ffb6c1;
-    border-radius: 10px;
-    filter: drop-shadow(0 0 100px crimson);
-}
 
-.pop-up{
-    display: none;
-}
-
-.pop-up2{
-    display: none;
-}
-
-.pop-up-after{
-    z-index: 1;
-}
 
 .left-sidebar{
     background-color: #ffb6c1;
@@ -119,5 +98,32 @@ img{
 
 .mixtures-text{
     color: #A5FFEF;
+}
+
+.icontainer{
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    width: 30vw;
+    height: 40vw;
+    border: 10px solid #ffb6c1;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 100px crimson);
+}
+
+.top{
+    background-color: #ffb6c1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom{
+    background-color: aliceblue;
+    display: flex;
+}
+
+.instr-text{
+    font-size: 2.2vw;
+    padding: 10px 10px;
 }
 
