@@ -21,7 +21,11 @@ app.post("/drink", async (req, res) => {
   try {
     const response = await axios.get(API_url + drink);
     const result = response.data;
-    res.render("mixes.ejs", { choices: result.drinks, drink: drink });
+    if(result.drinks != null){
+      res.render("mixes.ejs", { choices: result.drinks, drink: drink });
+    }else{
+      res.render('index.ejs', {error: 'Enter valid cocktail'})
+    }
   } catch (error) {
     res.render("mixes.ejs", { error: error.message });
     console.log(error.message);

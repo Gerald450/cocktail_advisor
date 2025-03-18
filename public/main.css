@@ -24,7 +24,6 @@ body{
 }
 
 
-
 .left-sidebar{
     background-color: #ffb6c1;
     display: flex;
@@ -39,7 +38,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 10px;
-    padding: 70px 20px 20px 40px;
+    padding: 30px 20px 20px 40px;
 }
 
 .welcome{
@@ -81,6 +80,7 @@ img{
     margin-top: 7px;
     background-color: aliceblue;
     border: none;
+    text-wrap: auto;
     
 }
 
@@ -135,3 +135,29 @@ img{
     gap: 30px;
 }
 
+.right{
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    overflow-y: scroll
+}
+
+.right-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffb6c1;
+    border: 2px solid aliceblue;
+    border-radius: 10px;
+}
+
+.search{
+    border-radius: 10px;
+    width: 40vw;
+    
+}
+
+#search{
+    background-color: #ffb6c1;
+    border: none;
+    margin-left: 20px;
+}
