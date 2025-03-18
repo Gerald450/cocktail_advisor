@@ -32,10 +32,10 @@ app.post('/mixture', async (req, res) => {
     try{
         const response = await axios.get(API_url + drink);
         const result = response.data;
-        res.render('index.ejs', {instructions: result.strInstructions})
+        res.render('mixes.ejs', {instructions: result.strInstructions, mix: drink})
 
     }catch(error){
-        res.render('index.ejs', {error: error.message});
+        res.render('mixes.ejs', {error: error.message});
         console.log(error.message);
     }
 })

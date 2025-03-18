@@ -14,6 +14,8 @@
   </head>
   <body>
     <div class="center">
+
+
       <%# modal form %>
 
       <div class="pop-up">
@@ -40,13 +42,33 @@
               <input
                 type="submit"
                 value="<%=choice.strDrink %>"
-                class="btn dancing-script"
+                class="btn btn-submit2 dancing-script"
               />
             </form>
+            <button class="btn btn-submit-2 dancing-script">Go</button>
           </div>
           <% })} %>
         </div>
       </div>
+
+
+      <%# instructions %>
+
+      <div class="pop-up2">
+        <%# sidebar list %> 
+        <% if(locals.instructions){ %>
+        <div class="left-sidebar">
+          <h1 class="mixtures-text dancing-script">instructions for <%=mix%></h1>
+        </div>
+
+        <div class="right-sidebar">
+          <p><%=instructions%></p>
+          </div>
+          <% } %>
+        </div>
+      </div>
+
+
 
       <div id="container" class="container">
         <%# sidebar list %>
@@ -69,17 +91,37 @@
                 value="Margarita"
                 class="hidden-input"
               />
-
               <button class="btn-submit dancing-script">Margarita</button>
-              <input
+              
+              <!-- <input
                 type="submit"
                 value="Margarita"
                 class="btn-submit dancing-script"
-              />
+              /> -->
             </form>
-            <button class="btn-submit dancing-script" style="display: none;">Margarita</button>
+            <button class="btn-submit dancing-script">Go</button>
           </div>
-          <div class="cocktails"></div>
+          <div class="cocktails">
+            <img
+              src="https://www.thecocktaildb.com/images/media/drink/qgdu971561574065.jpg"
+            />
+            <form action="/drink" method="post" class="input-form">
+              <input
+                type="hidden"
+                name="drink"
+                value="Negroni"
+                class="hidden-input"
+              />
+              <button class="btn-submit dancing-script">Negroni</button>
+              
+              <!-- <input
+                type="submit"
+                value="Margarita"
+                class="btn-submit dancing-script"
+              /> -->
+            </form>
+            <button class="btn-submit dancing-script">Go</button>
+          </div>
           <div class="cocktails"></div>
           <div class="cocktails"></div>
           <div class="cocktails"></div>

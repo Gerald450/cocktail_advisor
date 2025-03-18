@@ -23,7 +23,22 @@ body{
     filter: drop-shadow(0 0 100px crimson);
 }
 
+.container2{
+    position: static;
+    width: 70vw;
+    height: 40vw;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border: 10px solid #ffb6c1;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 100px crimson);
+}
+
 .pop-up{
+    display: none;
+}
+
+.pop-up2{
     display: none;
 }
 
