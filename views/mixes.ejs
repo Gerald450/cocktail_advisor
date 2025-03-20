@@ -25,7 +25,7 @@
 
         <div class="right-sidebar">
           <%# cocktail list %> 
-          <% choices.forEach((choice) => { %>
+          <% choices.shift(); choices.forEach((choice) => { %>
           <div class="cocktails">
             <img src="<%=choice.strDrinkThumb%>" />
             <form action="/mixture" method="post" class="input-form">

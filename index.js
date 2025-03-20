@@ -15,20 +15,23 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
+//add search
+
 app.post("/drink", async (req, res) => {
   const drink = req.body.drink;
 
   try {
     const response = await axios.get(API_url + drink);
     const result = response.data;
-    if(result.drinks != null){
-      res.render("mixes.ejs", { choices: result.drinks, drink: drink });
-    }else{
+    if(result.drinks == null || result.drinks == 'no data found'){
+
       res.render('index.ejs', {error: 'Enter valid cocktail'})
+    }else{
+     
+      res.render("mixes.ejs", { choices: result.drinks, drink: drink });
     }
   } catch (error) {
     res.render("mixes.ejs", { error: error.message });
-    console.log(error.message);
   }
 });
 
@@ -38,7 +41,11 @@ app.post('/mixture', async (req, res) => {
     try{
         const response = await axios.get(API_url + drink);
         const result = response.data;
-        for(let i = 1; i<16; i++){
+     
+        if (result.drinks.length > 1){
+          res.render("mixes.ejs", { choices: result.drinks, drink: drink });
+        }else{
+          for(let i = 1; i<16; i++){
             let ingredient = 'strIngredient' + i;
             let need = result.drinks[0][ingredient];
             if (need!=null){
@@ -53,10 +60,15 @@ app.post('/mixture', async (req, res) => {
                 measures.push(need)
             }
         }
-        res.render('instructions.ejs', {instructions: result.drinks[0].strInstructions, mix: drink, listI: ingredients, listM: measures})
 
-        ingredients= [];
-        measures=[];
+          res.render('instructions.ejs', {instructions: result.drinks[0].strInstructions, mix: drink, listI: ingredients, listM: measures})
+          ingredients= [];
+          measures=[];
+        }
+
+        
+
+        
 
     }catch(error){
         res.render('instructions.ejs', {error: error.message});

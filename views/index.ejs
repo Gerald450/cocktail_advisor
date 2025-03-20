@@ -26,7 +26,7 @@
         <div class="right">
           <div class="right-top">
             <form action="/drink" method="post">
-              <input name="drink" type="text" class="search" 
+              <input name="drink" type="text" class="search" required autocomplete="off"
               <% if (locals.error){ %>
               placeholder="<%=error%>"
              <% } %>
